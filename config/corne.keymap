@@ -53,25 +53,25 @@
 &none  &kp Q         &kp W        &kp E       &kp R       &kp T        &kp Y      &kp U       &kp I          &kp O        &kp P            &none
 &none  &hm LSHIFT A  &hm LCTRL S  &hm LALT D  &hm LGUI F  &kp G        &kp H      &hm RGUI J  &hm RALT K     &hm RCTRL L  &hm RSHIFT SEMI  &none
 &none  &kp Z         &kp X        &kp C       &kp V       &kp B        &kp N      &kp M       &kp COMMA      &kp DOT      &kp SLASH        &none
-                                  &mo 3       &mo 1       &kp SPACE    &kp ENTER  &mo 2       &kp BACKSPACE
+                                  &lt 3 TAB   &mo 1       &kp SPACE    &kp ENTER  &mo 2       &kp BACKSPACE
             >;
         };
 
         lower_layer {
             bindings = <
-&none  &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp STAR    &kp LPAR  &kp RPAR  &none
-&none  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5       &kp N6     &kp N7     &kp N8      &kp N9    &kp N0    &none
-&none  &kp LBRC  &kp RBRC  &kp LBKT  &kp RBKT  &kp BSLH     &kp MINUS  &kp EQUAL  &kp UNDER   &kp PLUS  &kp PIPE  &none
-                           &trans    &trans    &none        &none      &kp BSPC   &mo ADJUST
+&none  &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT           &kp CARET  &kp AMPS   &kp STAR    &kp LPAR  &kp RPAR  &none
+&none  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5              &kp N6     &kp N7     &kp N8      &kp N9    &kp N0    &none
+&none  &kp LBRC  &kp RBRC  &kp LBKT  &kp RBKT  &kp SINGLE_QUOTE    &kp MINUS  &kp EQUAL  &kp UNDER   &kp PLUS  &kp PIPE  &none
+                           &trans    &trans    &none               &none      &kp BSPC   &mo ADJUST
             >;
         };
 
         raise_layer {
             bindings = <
-&none  &kp GRAVE  &kp HOME     &kp UP      &kp END    &kp PG_UP          &kp COLON  &kp F7          &kp F8        &kp F9           &kp F10  &none
-&none  &kp TILDE  &screenshot  &kp DOWN    &kp RIGHT  &kp PG_DN          &kp LEFT   &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp F11  &none
-&none  &kp CAPS   &kp INS      &kp DEL     &kp PSCRN  &kp PAUSE_BREAK    &kp A      &kp F1          &kp F2        &kp F3           &kp F12  &none
-                               &mo ADJUST  &trans     &none              &none      &trans          &trans
+&none  &kp GRAVE       &none             &none         &none         &none    &kp COLON  &none           &none         &none            &none  &none
+&none  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &none    &kp LEFT   &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none  &none
+&none  &kp DELETE      &none             &none         &none         &none    &none      &none           &none         &none            &none  &none
+                                         &trans        &trans        &none    &none      &trans          &trans
             >;
         };
 
