@@ -9,16 +9,30 @@
 
 / {
     behaviors {
-        hm: homerow_mods {
+        hml: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-unless-interrupted";
+            quick-tap-ms = <150>;
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
-            retro-tap;
+            hold-trigger-key-positions = <36 37 38 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+            hold-trigger-on-release;
+        };
+
+        hrr: hrr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRR";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <41 40 39 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
         };
     };
 
@@ -58,10 +72,10 @@
 
         default_layer {
             bindings = <
-&none  &kp Q         &kp W        &kp E       &kp R       &kp T          &kp Y        &kp U            &kp I                   &kp O                  &kp P            &none
-&none  &hm LSHIFT A  &hm LCTRL S  &hm LALT D  &hm LGUI F  &kp G          &kp H        &hm RGUI J       &hm RALT K              &hm RCTRL L            &hm RSHIFT SEMI  &none
-&none  &kp Z         &kp X        &kp C       &kp V       &kp B          &kp N        &kp M            &mt SINGLE_QUOTE COMMA  &mt DOUBLE_QUOTES DOT  &kp SLASH        &none
-                                  &kp ESC     &lt 3 TAB   &lt 1 SPACE    &lt 1 ENTER  &lt 2 BACKSPACE  &kp ESCAPE
+&none  &kp Q          &kp W         &kp E        &kp R        &kp T          &kp Y        &kp U            &kp I                   &kp O                  &kp P             &none
+&none  &hml LSHIFT A  &hml LCTRL S  &hml LALT D  &hml LGUI F  &kp G          &kp H        &hrr RGUI J      &hrr RALT K             &hrr RCTRL L           &hrr RSHIFT SEMI  &none
+&none  &kp Z          &kp X         &kp C        &kp V        &kp B          &kp N        &kp M            &mt SINGLE_QUOTE COMMA  &mt DOUBLE_QUOTES DOT  &kp SLASH         &none
+                                    &kp ESC      &lt 3 TAB    &lt 1 SPACE    &lt 1 ENTER  &lt 2 BACKSPACE  &kp ESCAPE
             >;
         };
 
