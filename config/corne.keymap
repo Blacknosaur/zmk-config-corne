@@ -19,6 +19,7 @@
             bindings = <&kp>, <&kp>;
 
             hold-trigger-key-positions = <36 37 38 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+            retro-tap;
         };
 
         hrr: hrr {
@@ -31,6 +32,7 @@
             bindings = <&kp>, <&kp>;
 
             hold-trigger-key-positions = <41 40 39 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+            retro-tap;
         };
     };
 
@@ -62,6 +64,20 @@
                 <&kp N4>,
                 <&macro_release>,
                 <&kp LSHFT &kp LEFT_CONTROL &kp LCMD>;
+        };
+
+        afunc: afunc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp EQUAL &kp GREATER_THAN &kp LEFT_BRACE &kp LS(RIGHT_BRACE)>;
+            label = "AF";
+        };
+
+        htmlel: htmlel {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LESS_THAN &kp GREATER_THAN &kp LEFT>;
+            label = "HTML";
         };
     };
 
@@ -97,10 +113,10 @@
 
         adjust_layer {
             bindings = <
-&none  &kp C_BRIGHTNESS_DEC    &kp C_BRIGHTNESS_INC  &kp C_VOL_DN   &kp C_VOL_UP           &kp K_MUTE                   &none  &none  &bt BT_NXT  &bt BT_SEL 0  &bt BT_CLR      &none
-&none  &kp LG(GRAVE)           &mac_screenshot       &kp LG(PLUS)   &kp LG(LEFT_BRACKET)   &kp LS(LG(RIGHT_BRACKET))    &none  &none  &none       &none         &none           &none
-&none  &kp LA(LC(LEFT_ARROW))  &kp LA(LC(RIGHT))     &kp LG(MINUS)  &kp LG(RIGHT_BRACKET)  &kp LS(LG(LEFT_BRACKET))     &none  &none  &none       &none         &studio_unlock  &none
-                                                     &trans         &none                  &none                        &none  &none  &trans
+&none  &kp C_BRIGHTNESS_DEC    &kp C_BRIGHTNESS_INC  &kp C_VOL_DN   &kp C_VOL_UP           &kp K_MUTE                   &none  &none   &bt BT_NXT  &bt BT_SEL 0  &bt BT_CLR      &none
+&none  &kp LG(GRAVE)           &mac_screenshot       &kp LG(PLUS)   &kp LG(LEFT_BRACKET)   &kp LS(LG(RIGHT_BRACKET))    &none  &afunc  &htmlel     &none         &none           &none
+&none  &kp LA(LC(LEFT_ARROW))  &kp LA(LC(RIGHT))     &kp LG(MINUS)  &kp LG(RIGHT_BRACKET)  &kp LS(LG(LEFT_BRACKET))     &none  &none   &none       &none         &studio_unlock  &none
+                                                     &trans         &none                  &none                        &none  &none   &trans
             >;
         };
     };
