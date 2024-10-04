@@ -1,6 +1,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT 0
 #define LOWER   1
@@ -138,10 +140,10 @@
 
         adjust_layer {
             bindings = <
-&none  &kp C_BRIGHTNESS_DEC    &kp C_BRIGHTNESS_INC  &kp C_VOL_DN   &kp C_VOL_UP           &kp K_MUTE                   &none  &none   &bt BT_NXT  &bt BT_SEL 0  &bt BT_CLR      &none
-&none  &kp LG(GRAVE)           &mac_screenshot       &kp LG(PLUS)   &kp LG(LEFT_BRACKET)   &kp LS(LG(RIGHT_BRACKET))    &none  &afunc  &htmlel     &htmlelclose  &none           &none
-&none  &kp LA(LC(LEFT_ARROW))  &kp LA(LC(RIGHT))     &kp LG(MINUS)  &kp LG(RIGHT_BRACKET)  &kp LS(LG(LEFT_BRACKET))     &none  &none   &none       &none         &studio_unlock  &none
-                                                     &trans         &none                  &none                        &none  &none   &trans
+&none  &kp C_BRIGHTNESS_DEC    &kp C_BRIGHTNESS_INC  &kp C_VOL_DN       &kp C_VOL_UP           &kp K_MUTE                   &none           &none         &bt BT_NXT         &bt BT_SEL 0  &none           &none
+&none  &kp LG(GRAVE)           &mac_screenshot       &kp LG(PLUS)       &kp LG(LEFT_BRACKET)   &kp LS(LG(RIGHT_BRACKET))    &none           &afunc        &htmlel            &htmlelclose  &none           &none
+&none  &kp LA(LC(LEFT_ARROW))  &kp LA(LC(RIGHT))     &kp LG(MINUS)      &kp LG(RIGHT_BRACKET)  &kp LS(LG(LEFT_BRACKET))     &none           &none         &none              &none         &studio_unlock  &none
+                                                     &kp LA(LC(ENTER))  &none                  &none                        &bt BT_CLR_ALL  &out OUT_TOG  &ext_power EP_TOG
             >;
         };
     };
