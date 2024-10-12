@@ -86,7 +86,7 @@
 
         eqstr {
             bindings = <&eqstring>;
-            key-positions = <32 33>;
+            key-positions = <32 31>;
         };
     };
 
@@ -145,27 +145,27 @@
 
         default_layer {
             bindings = <
-&none  &kp Q          &kp W         &kp E        &kp R        &kp T          &kp Y        &kp U            &kp I                   &kp O                  &kp P             &none
-&none  &hml LSHIFT A  &hml LCTRL S  &hml LALT D  &hml LGUI F  &kp G          &kp H        &hrr RGUI J      &hrr RALT K             &hrr RCTRL L           &hrr RSHIFT SEMI  &none
-&none  &kp Z          &kp X         &kp C        &kp V        &kp B          &kp N        &kp M            &mt SINGLE_QUOTE COMMA  &mt DOUBLE_QUOTES DOT  &kp SLASH         &none
-                                    &kp ESC      &lt 3 TAB    &lt 1 SPACE    &lt 1 ENTER  &lt 2 BACKSPACE  &key_repeat
+&none  &kp Q          &kp W         &kp E          &kp R        &kp T          &kp Y        &kp U            &kp I                   &kp O                  &kp P             &none
+&none  &hml LSHIFT A  &hml LCTRL S  &hml LALT D    &hml LGUI F  &kp G          &kp H        &hrr RGUI J      &hrr RALT K             &hrr RCTRL L           &hrr RSHIFT SEMI  &none
+&none  &kp Z          &kp X         &kp C          &kp V        &kp B          &kp N        &kp M            &mt SINGLE_QUOTE COMMA  &mt DOUBLE_QUOTES DOT  &kp SLASH         &none
+                                    &mt ESC SPACE  &lt 3 TAB    &lt 1 SPACE    &lt 1 ENTER  &lt 2 BACKSPACE  &kp DEL
             >;
         };
 
         lower_layer {
             bindings = <
-&none  &kp EXCL  &kp AT    &kp HASH  &kp DLLR        &kp PRCNT           &kp CARET  &kp AMPS   &kp STAR   &kp LPAR  &kp RPAR  &none
-&none  &kp N1    &kp N2    &kp N3    &kp N4          &kp N5              &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &none
-&none  &kp LBRC  &kp RBRC  &kp LBKT  &kp RBKT        &kp SINGLE_QUOTE    &kp MINUS  &kp EQUAL  &kp UNDER  &kp PLUS  &kp PIPE  &none
-                           &trans    &kp LEFT_SHIFT  &none               &none      &kp BSPC   &mo 3
+&none  &kp EXCL  &kp AT    &kp HASH  &kp DLLR        &kp PRCNT    &kp CARET  &kp AMPS   &kp STAR   &kp LPAR  &kp RPAR  &none
+&none  &kp N1    &kp N2    &kp N3    &kp N4          &kp N5       &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &none
+&none  &kp LBRC  &kp RBRC  &kp LBKT  &kp RBKT        &kp GRAVE    &kp MINUS  &kp EQUAL  &kp UNDER  &kp PLUS  &kp PIPE  &none
+                           &trans    &kp LEFT_SHIFT  &none        &none      &kp BSPC   &mo 3
             >;
         };
 
         raise_layer {
             bindings = <
-&none  &kp GRAVE       &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &none         &none    &kp COLON  &kp MINUS       &kp UNDER     &none            &none  &none
-&none  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT       &kp LEFT_GUI  &none    &kp LEFT   &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none  &none
-&none  &kp DELETE      &none             &none              &none         &none    &none      &none           &none         &none            &none  &none
+&none  &kp GRAVE       &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &none         &none    &kp LG(X)  &kp LG(C)       &kp LG(V)      &kp LG(Z)        &kp LG(LS(Z))  &none
+&none  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT       &kp LEFT_GUI  &none    &kp LEFT   &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &none          &none
+&none  &kp DELETE      &none             &none              &none         &none    &none      &kp PAGE_DOWN   &kp PAGE_DOWN  &none            &none          &none
                                          &trans             &trans        &none    &trans     &trans          &trans
             >;
         };
