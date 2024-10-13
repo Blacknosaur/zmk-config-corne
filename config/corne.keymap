@@ -108,6 +108,21 @@
             bindings = <&eqarr>;
             key-positions = <32 33>;
         };
+
+        cut {
+            bindings = <&kp LG(X)>;
+            key-positions = <25 26>;
+        };
+
+        copy {
+            bindings = <&kp LG(C)>;
+            key-positions = <26 27>;
+        };
+
+        paste {
+            bindings = <&kp LG(V)>;
+            key-positions = <27 28>;
+        };
     };
 
     macros {
@@ -172,10 +187,37 @@
 
         default_layer {
             bindings = <
-&none  &kp Q          &kp W         &kp E             &kp R        &kp T          &kp Y        &kp U            &kp I                   &kp O                  &kp P             &none
-&none  &hml LSHIFT A  &hml LCTRL S  &hml LALT D       &hml LGUI F  &kp G          &kp H        &hrr RGUI J      &hrr RALT K             &hrr RCTRL L           &hrr RSHIFT SEMI  &none
-&none  &kp Z          &kp X         &kp C             &kp V        &kp B          &kp N        &kp M            &mt SINGLE_QUOTE COMMA  &mt DOUBLE_QUOTES DOT  &kp SLASH         &none
-                                    &mt SPACE ESCAPE  &lt 3 TAB    &lt 4 SPACE    &lt 4 ENTER  &lt 2 BACKSPACE  &kp DEL
+&none  &kp Q          &kp W         &kp E             &kp R        &kp T          &kp Y        &kp U            &kp I        &kp O         &kp P             &none
+&none  &hml LSHIFT A  &hml LCTRL S  &hml LALT D       &hml LGUI F  &kp G          &kp H        &hrr RGUI J      &hrr RALT K  &hrr RCTRL L  &hrr RSHIFT SEMI  &none
+&none  &kp Z          &kp X         &kp C             &kp V        &kp B          &kp N        &kp M            &kp COMMA    &kp DOT       &kp SLASH         &none
+                                    &mt SPACE ESCAPE  &lt 3 TAB    &lt 1 SPACE    &lt 1 ENTER  &lt 2 BACKSPACE  &kp DEL
+            >;
+        };
+
+        symbols {
+            bindings = <
+&trans  &kp EXCLAMATION          &kp GRAVE    &kp N1  &kp N2  &kp N3    &kp MINUS  &kp PLUS    &kp EQUAL      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS         &trans
+&trans  &hrr LEFT_SHIFT AT_SIGN  &kp HASH     &kp N4  &kp N5  &kp N6    &kp UNDER  &kp PIPE    &kp AMPERSAND  &kp LEFT_BRACE        &hrr RIGHT_SHIFT RIGHT_BRACE  &trans
+&trans  &kp DOLLAR               &kp PERCENT  &kp N7  &kp N8  &kp N9    &kp CARET  &kp DOLLAR  &kp ASTERISK   &kp LEFT_BRACKET      &kp RIGHT_BRACKET             &none
+                                              &kp J   &kp K   &kp N0    &kp COLON  &trans      &kp PERIOD
+            >;
+        };
+
+        raise_layer {
+            bindings = <
+&none  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &kp LG(LS(LEFT_BRACKET))  &kp LG(LS(RIGHT_BRACKET))  &none            &kp LG(X)  &kp LG(C)       &kp LG(V)      &kp LG(Z)        &kp LG(LS(Z))  &none
+&none  &kp LEFT_SHIFT        &kp LEFT_CONTROL       &kp LEFT_ALT              &kp LEFT_GUI               &none            &kp LEFT   &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &kp LG(SPACE)  &none
+&none  &none                 &none                  &none                     &none                      &none            &none      &kp PAGE_DOWN   &kp PAGE_DOWN  &none            &kp LG(LA(V))  &none
+                                                    &trans                    &trans                     &kp LG(GRAVE)    &trans     &trans          &trans
+            >;
+        };
+
+        adjust_layer {
+            bindings = <
+&none  &kp C_BRIGHTNESS_DEC    &kp C_BRIGHTNESS_INC  &kp C_VOL_DN              &kp C_VOL_UP               &kp K_MUTE       &none             &bt BT_SEL 3       &bt BT_SEL 1     &bt BT_SEL 0    &none           &none
+&none  &kp LG(GRAVE)           &mac_screenshot       &kp LG(LEFT_BRACKET)      &kp LG(RIGHT_BRACKET)      &kp LG(PLUS)     &none             &bl BL_OFF         &rgb_ug RGB_OFF  &bt BT_CLR_ALL  &none           &none
+&none  &kp LA(LC(LEFT_ARROW))  &kp LA(LC(RIGHT))     &kp LG(LS(LEFT_BRACKET))  &kp LG(LS(RIGHT_BRACKET))  &kp LG(MINUS)    &ext_power EP_ON  &ext_power EP_OFF  &out OUT_BLE     &out OUT_USB    &studio_unlock  &none
+                                                     &kp LA(LC(ENTER))         &none                      &none            &mkp LCLK         &mkp MB2           &mkp MCLK
             >;
         };
 
@@ -185,33 +227,6 @@
 &none  &kp N1    &kp N2    &kp N3    &kp N4          &kp N5       &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &none
 &none  &kp LBRC  &kp RBRC  &kp LBKT  &kp RBKT        &kp GRAVE    &kp MINUS  &kp EQUAL  &kp UNDER  &kp PLUS  &kp PIPE  &none
                            &trans    &kp LEFT_SHIFT  &none        &none      &kp BSPC   &mo 3
-            >;
-        };
-
-        raise_layer {
-            bindings = <
-&none  &kp GRAVE       &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &none         &none    &kp LG(X)  &kp LG(C)       &kp LG(V)      &kp LG(Z)        &kp LG(LS(Z))  &none
-&none  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT       &kp LEFT_GUI  &none    &kp LEFT   &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &none          &none
-&none  &kp DELETE      &none             &none              &none         &none    &none      &kp PAGE_DOWN   &kp PAGE_DOWN  &none            &none          &none
-                                         &trans             &trans        &none    &trans     &trans          &trans
-            >;
-        };
-
-        adjust_layer {
-            bindings = <
-&none  &kp C_BRIGHTNESS_DEC    &kp C_BRIGHTNESS_INC  &kp C_VOL_DN              &kp C_VOL_UP               &kp K_MUTE       &none             &bt BT_SEL 3       &bt BT_SEL 1     &bt BT_SEL 0    &none           &none
-&none  &kp LG(GRAVE)           &mac_screenshot       &kp LG(LEFT_BRACKET)      &kp LG(RIGHT_BRACKET)      &kp LG(PLUS)     &none             &bl BL_OFF         &rgb_ug RGB_OFF  &bt BT_CLR_ALL  &none           &none
-&none  &kp LA(LC(LEFT_ARROW))  &kp LA(LC(RIGHT))     &kp LG(LS(LEFT_BRACKET))  &kp LG(LS(RIGHT_BRACKET))  &kp LG(MINUS)    &ext_power EP_ON  &ext_power EP_OFF  &out OUT_BLE     &out OUT_USB    &studio_unlock  &none
-                                                     &kp LA(LC(ENTER))         &none                      &none            &mkp LCLK         &mkp RCLK          &mkp MCLK
-            >;
-        };
-
-        symbols {
-            bindings = <
-&trans  &kp GRAVE                &kp EXCLAMATION  &kp N1  &kp N2  &kp N3    &kp MINUS      &kp PLUS    &kp EQUAL      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS         &trans
-&trans  &hrr LEFT_SHIFT AT_SIGN  &kp HASH         &kp N4  &kp N5  &kp N6    &kp UNDER      &kp PIPE    &kp AMPERSAND  &kp LEFT_BRACE        &hrr RIGHT_SHIFT RIGHT_BRACE  &trans
-&trans  &kp DOLLAR               &kp PERCENT      &kp N7  &kp N8  &kp N9    &kp LCTRL      &kp DOLLAR  &kp ASTERISK   &kp LEFT_BRACKET      &kp RIGHT_BRACKET             &none
-                                                  &kp J   &kp K   &kp N0    &kp SEMICOLON  &kp COMMA   &kp PERIOD
             >;
         };
     };
