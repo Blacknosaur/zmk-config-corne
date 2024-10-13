@@ -88,6 +88,26 @@
             bindings = <&eqstring>;
             key-positions = <32 31>;
         };
+
+        dquote {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <6 7>;
+        };
+
+        squote {
+            bindings = <&kp SQT>;
+            key-positions = <7 8>;
+        };
+
+        gve {
+            bindings = <&kp GRAVE>;
+            key-positions = <8 9>;
+        };
+
+        eqaff {
+            bindings = <&eqarr>;
+            key-positions = <32 33>;
+        };
     };
 
     macros {
@@ -138,6 +158,13 @@
             bindings = <&kp EQUAL &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT>;
             label = "EQSTRING";
         };
+
+        eqarr: eq_brace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
+            label = "EQ_BRACE";
+        };
     };
 
     keymap {
@@ -145,10 +172,10 @@
 
         default_layer {
             bindings = <
-&none  &kp Q          &kp W         &kp E          &kp R        &kp T          &kp Y        &kp U            &kp I                   &kp O                  &kp P             &none
-&none  &hml LSHIFT A  &hml LCTRL S  &hml LALT D    &hml LGUI F  &kp G          &kp H        &hrr RGUI J      &hrr RALT K             &hrr RCTRL L           &hrr RSHIFT SEMI  &none
-&none  &kp Z          &kp X         &kp C          &kp V        &kp B          &kp N        &kp M            &mt SINGLE_QUOTE COMMA  &mt DOUBLE_QUOTES DOT  &kp SLASH         &none
-                                    &mt ESC SPACE  &lt 3 TAB    &lt 1 SPACE    &lt 1 ENTER  &lt 2 BACKSPACE  &kp DEL
+&none  &kp Q          &kp W         &kp E             &kp R        &kp T          &kp Y        &kp U            &kp I                   &kp O                  &kp P             &none
+&none  &hml LSHIFT A  &hml LCTRL S  &hml LALT D       &hml LGUI F  &kp G          &kp H        &hrr RGUI J      &hrr RALT K             &hrr RCTRL L           &hrr RSHIFT SEMI  &none
+&none  &kp Z          &kp X         &kp C             &kp V        &kp B          &kp N        &kp M            &mt SINGLE_QUOTE COMMA  &mt DOUBLE_QUOTES DOT  &kp SLASH         &none
+                                    &mt SPACE ESCAPE  &lt 3 TAB    &lt 4 SPACE    &lt 4 ENTER  &lt 2 BACKSPACE  &kp DEL
             >;
         };
 
@@ -176,6 +203,15 @@
 &none  &kp LG(GRAVE)           &mac_screenshot       &kp LG(LEFT_BRACKET)      &kp LG(RIGHT_BRACKET)      &kp LG(PLUS)     &none             &bl BL_OFF         &rgb_ug RGB_OFF  &bt BT_CLR_ALL  &none           &none
 &none  &kp LA(LC(LEFT_ARROW))  &kp LA(LC(RIGHT))     &kp LG(LS(LEFT_BRACKET))  &kp LG(LS(RIGHT_BRACKET))  &kp LG(MINUS)    &ext_power EP_ON  &ext_power EP_OFF  &out OUT_BLE     &out OUT_USB    &studio_unlock  &none
                                                      &kp LA(LC(ENTER))         &none                      &none            &mkp LCLK         &mkp RCLK          &mkp MCLK
+            >;
+        };
+
+        symbols {
+            bindings = <
+&trans  &kp GRAVE                &kp EXCLAMATION  &kp N1  &kp N2  &kp N3    &kp MINUS      &kp PLUS    &kp EQUAL      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS         &trans
+&trans  &hrr LEFT_SHIFT AT_SIGN  &kp HASH         &kp N4  &kp N5  &kp N6    &kp UNDER      &kp PIPE    &kp AMPERSAND  &kp LEFT_BRACE        &hrr RIGHT_SHIFT RIGHT_BRACE  &trans
+&trans  &kp DOLLAR               &kp PERCENT      &kp N7  &kp N8  &kp N9    &kp LCTRL      &kp DOLLAR  &kp ASTERISK   &kp LEFT_BRACKET      &kp RIGHT_BRACKET             &none
+                                                  &kp J   &kp K   &kp N0    &kp SEMICOLON  &kp COMMA   &kp PERIOD
             >;
         };
     };
