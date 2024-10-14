@@ -123,6 +123,21 @@
             bindings = <&kp LG(V)>;
             key-positions = <27 28>;
         };
+
+        rightclick {
+            bindings = <&mkp MB1>;
+            key-positions = <38 16>;
+        };
+
+        click2 {
+            bindings = <&mkp MB2>;
+            key-positions = <38 15>;
+        };
+
+        click3 {
+            bindings = <&mkp MB3>;
+            key-positions = <38 14>;
+        };
     };
 
     macros {
