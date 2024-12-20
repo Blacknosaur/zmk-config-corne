@@ -127,17 +127,17 @@
 
         rightclick {
             bindings = <&mkp MB1>;
-            key-positions = <16 15>;
+            key-positions = <38 4>;
         };
 
         click2 {
             bindings = <&mkp MB2>;
-            key-positions = <15 14>;
+            key-positions = <38 3>;
         };
 
         click3 {
             bindings = <&mkp MB3>;
-            key-positions = <14 13>;
+            key-positions = <38 2>;
         };
     };
 
