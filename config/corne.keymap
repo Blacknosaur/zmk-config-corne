@@ -126,18 +126,18 @@
         };
 
         rightclick {
-            bindings = <&mkp MB1>;
-            key-positions = <38 4>;
+            bindings = <&mkp LCLK>;
+            key-positions = <38 16>;
         };
 
         click2 {
-            bindings = <&mkp MB2>;
-            key-positions = <38 3>;
+            bindings = <&mkp RCLK>;
+            key-positions = <38 15>;
         };
 
         click3 {
-            bindings = <&mkp MB3>;
-            key-positions = <38 2>;
+            bindings = <&mkp MCLK>;
+            key-positions = <38 14>;
         };
     };
 
